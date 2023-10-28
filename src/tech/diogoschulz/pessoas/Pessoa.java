@@ -1,11 +1,14 @@
 package tech.diogoschulz.pessoas;
 
+import tech.diogoschulz.composicao.Endereco;
+import tech.diogoschulz.composicao.Telefone;
+
 public class Pessoa {
 
 	private String nome;
 	private String dataNascimento;
-	private String endereco;
-	private String telsContato;
+	private Endereco endereco;
+	private Telefone telsContato;
 	
 		public String getNome() {
 		return nome;
@@ -23,23 +26,23 @@ public class Pessoa {
 		this.dataNascimento = dataNascimento;
 	}
 
-	public String getEndereco() {
+	public Endereco getEndereco() {
 		return endereco;
 	}
 
-	public void setEndereco(String endereco) {
+	public void setEndereco(Endereco endereco) {
 		this.endereco = endereco;
 	}
 
-	public String getTelsContato() {
+	public Telefone getTelsContato() {
 		return telsContato;
 	}
 
-	public void setTelsContato(String telsContato) {
+	public void setTelsContato(Telefone telsContato) {
 		this.telsContato = telsContato;
 	}
 
-	public void cadastrar(String nome, String dataNascimento, String endereco, String telsContato) {
+	public void cadastrar(String nome, String dataNascimento, Endereco endereco, Telefone telsContato) {
 		this.nome = nome;
 		this.dataNascimento = dataNascimento;
 		this.endereco = endereco;

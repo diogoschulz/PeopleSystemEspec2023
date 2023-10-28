@@ -1,12 +1,15 @@
 package tech.diogoschulz.pessoas;
 
+import tech.diogoschulz.composicao.Endereco;
+import tech.diogoschulz.composicao.Telefone;
+
 public class Funcionario extends Pessoa {
 	private int matricula;
 	private String cargo;
 	private double salario;
 	private String dataAdmissao;
 	
-	public void cadastrar(int matricula, String cargo, double salario, String dataAdmissao, String nome, String dataNascimento, String endereco, String telsContato) {
+	public void cadastrar(int matricula, String cargo, double salario, String dataAdmissao, String nome, String dataNascimento, Endereco endereco, Telefone telsContato) {
 		this.matricula = matricula;
 		this.cargo = cargo;
 		this.salario = salario;
