@@ -1,12 +1,15 @@
 package tech.diogoschulz.pessoas;
 
+import java.time.LocalDate;
+import java.time.Period;
+
 import tech.diogoschulz.composicao.Endereco;
 import tech.diogoschulz.composicao.Telefone;
 
 public class Pessoa {
 
 	private String nome;
-	private String dataNascimento;
+	private LocalDate dataNascimento;
 	private Endereco endereco;
 	private Telefone telsContato;
 	
@@ -18,11 +21,11 @@ public class Pessoa {
 		this.nome = nome;
 	}
 
-	public String getDataNascimento() {
+	public LocalDate getDataNascimento() {
 		return dataNascimento;
 	}
 
-	public void setDataNascimento(String dataNascimento) {
+	public void setDataNascimento(LocalDate dataNascimento) {
 		this.dataNascimento = dataNascimento;
 	}
 
@@ -42,7 +45,7 @@ public class Pessoa {
 		this.telsContato = telsContato;
 	}
 
-	public void cadastrar(String nome, String dataNascimento, Endereco endereco, Telefone telsContato) {
+	public void cadastrar(String nome, LocalDate dataNascimento, Endereco endereco, Telefone telsContato) {
 		this.nome = nome;
 		this.dataNascimento = dataNascimento;
 		this.endereco = endereco;
@@ -52,7 +55,9 @@ public class Pessoa {
 	
 	public int obterIdade() {
 		int idade = 0;
-		return idade;
+		LocalDate dataAtual = LocalDate.now();
+		Period periodo = Period.between(dataNascimento, dataAtual);
+		return idade = periodo.getYears();
 			
 	}
 }

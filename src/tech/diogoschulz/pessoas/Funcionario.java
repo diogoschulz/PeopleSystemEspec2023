@@ -1,5 +1,7 @@
 package tech.diogoschulz.pessoas;
 
+import java.time.LocalDate;
+
 import tech.diogoschulz.composicao.Endereco;
 import tech.diogoschulz.composicao.Telefone;
 
@@ -7,17 +9,14 @@ public class Funcionario extends Pessoa {
 	private int matricula;
 	private String cargo;
 	private double salario;
-	private String dataAdmissao;
+	private LocalDate dataAdmissao;
 	
-	public void cadastrar(int matricula, String cargo, double salario, String dataAdmissao, String nome, String dataNascimento, Endereco endereco, Telefone telsContato) {
+	public void cadastrar(int matricula, String cargo, double salario, LocalDate dataAdmissao, String nome, LocalDate dataNascimento, Endereco endereco, Telefone telsContato) {
 		this.matricula = matricula;
 		this.cargo = cargo;
 		this.salario = salario;
 		this.dataAdmissao = dataAdmissao;
-		setNome(nome);
-		setDataNascimento(dataNascimento);
-		setEndereco(endereco);
-		setTelsContato(telsContato);
+		cadastrar(nome, dataNascimento, endereco, telsContato);
 	}
 	
 	public void reajustarSalario(double percentual) {
@@ -36,11 +35,11 @@ public class Funcionario extends Pessoa {
 		this.matricula = matricula;
 	}
 
-	public String getDataAdmissao() {
+	public LocalDate getDataAdmissao() {
 		return dataAdmissao;
 	}
 
-	public void setDataAdmissao(String dataAdmissao) {
+	public void setDataAdmissao(LocalDate dataAdmissao) {
 		this.dataAdmissao = dataAdmissao;
 	}
 
