@@ -51,6 +51,11 @@ public class ListaDeTelefonesNaoOrdenados {
 			return -1;
 		}
 		
+		public void exibirTelefones() {
+			for(int i = 0; i < tamanho; i++) {
+				System.out.println(telefones[i]);
+			}
+		}
 		
 		//public boolean isFull() {
 		//	return tamanho == telefones.length;

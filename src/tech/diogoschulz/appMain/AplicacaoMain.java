@@ -4,6 +4,7 @@ import java.time.LocalDate;
 
 import tech.diogoschulz.composicao.Endereco;
 import tech.diogoschulz.composicao.Telefone;
+import tech.diogoschulz.estruturas.ListaDeTelefonesNaoOrdenados;
 import tech.diogoschulz.pessoas.Cliente;
 import tech.diogoschulz.pessoas.Funcionario;
 import tech.diogoschulz.pessoas.Pessoa;
@@ -26,6 +27,16 @@ public class AplicacaoMain {
 		objNovoCli01.getNome();
 		objNovoCli01.getEndereco().getRua();
 		objNovoCli01.getTelsContato();
+		
+		ListaDeTelefonesNaoOrdenados minhaLista = new ListaDeTelefonesNaoOrdenados();
+		Telefone telefone1 = new Telefone("11","1234560");
+		Telefone telefone2 = new Telefone("11","1456750");
+		
+		minhaLista.addTelefone(telefone1);
+		minhaLista.addTelefone(telefone2);
+		
+		System.out.println("Telefones antes da remoção");
+		minhaLista.exibirTelefones();
 		
 		
 	}
