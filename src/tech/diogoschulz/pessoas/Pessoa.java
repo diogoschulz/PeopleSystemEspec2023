@@ -5,13 +5,14 @@ import java.time.Period;
 
 import tech.diogoschulz.composicao.Endereco;
 import tech.diogoschulz.composicao.Telefone;
+import tech.diogoschulz.estruturas.ListaDeTelefonesNaoOrdenados;
 
 public class Pessoa {
 
 	private String nome;
 	private LocalDate dataNascimento;
 	private Endereco endereco;
-	private Telefone telsContato;
+	private ListaDeTelefonesNaoOrdenados listatelsContato;
 	
 		public String getNome() {
 		return nome;
@@ -37,19 +38,19 @@ public class Pessoa {
 		this.endereco = endereco;
 	}
 
-	public Telefone getTelsContato() {
-		return telsContato;
+	public ListaDeTelefonesNaoOrdenados getlistaTelsContato() {
+		return listatelsContato;
 	}
 
-	public void setTelsContato(Telefone telsContato) {
-		this.telsContato = telsContato;
+	public void setlistaTelsContato(ListaDeTelefonesNaoOrdenados listatelsContato) {
+		this.listatelsContato = listatelsContato;
 	}
 
-	public void cadastrar(String nome, LocalDate dataNascimento, Endereco endereco, Telefone telsContato) {
+	public void cadastrar(String nome, LocalDate dataNascimento, Endereco endereco, ListaDeTelefonesNaoOrdenados listatelsContato) {
 		this.nome = nome;
 		this.dataNascimento = dataNascimento;
 		this.endereco = endereco;
-		this.telsContato = telsContato;
+		this.listatelsContato = listatelsContato;
 		
 	}
 	

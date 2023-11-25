@@ -4,6 +4,7 @@ import java.time.LocalDate;
 
 import tech.diogoschulz.composicao.Endereco;
 import tech.diogoschulz.composicao.Telefone;
+import tech.diogoschulz.estruturas.ListaDeTelefonesNaoOrdenados;
 
 public class Funcionario extends Pessoa {
 	private int matricula;
@@ -11,12 +12,12 @@ public class Funcionario extends Pessoa {
 	private double salario;
 	private LocalDate dataAdmissao;
 	
-	public void cadastrar(int matricula, String cargo, double salario, LocalDate dataAdmissao, String nome, LocalDate dataNascimento, Endereco endereco, Telefone telsContato) {
+	public void cadastrar(int matricula, String cargo, double salario, LocalDate dataAdmissao, String nome, LocalDate dataNascimento, Endereco endereco, ListaDeTelefonesNaoOrdenados listatelsContato) {
 		this.matricula = matricula;
 		this.cargo = cargo;
 		this.salario = salario;
 		this.dataAdmissao = dataAdmissao;
-		cadastrar(nome, dataNascimento, endereco, telsContato);
+		cadastrar(nome, dataNascimento, endereco, listatelsContato);
 	}
 	
 	public void reajustarSalario(double percentual) {

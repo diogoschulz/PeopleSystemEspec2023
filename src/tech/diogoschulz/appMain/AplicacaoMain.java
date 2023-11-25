@@ -1,6 +1,7 @@
 package tech.diogoschulz.appMain;
 
 import java.time.LocalDate;
+import java.util.Scanner;
 
 import tech.diogoschulz.composicao.Endereco;
 import tech.diogoschulz.composicao.Telefone;
@@ -22,21 +23,35 @@ public class AplicacaoMain {
 		
 		
 //		objNovoFunc01.cadastrar(01, "Prof", 15, "02/02/2022", "Chorão", "18/09/1986", "Aqui", "9586");
-		//objNovoCli01.cadastrar("01", "prof", "Champignon", objDataNascCli01, objEndCli01, objTelsCli01 );
 		
-		objNovoCli01.getNome();
-		objNovoCli01.getEndereco().getRua();
-		objNovoCli01.getTelsContato();
 		
-		ListaDeTelefonesNaoOrdenados minhaLista = new ListaDeTelefonesNaoOrdenados();
-		Telefone telefone1 = new Telefone("11","1234560");
-		Telefone telefone2 = new Telefone("11","1456750");
+		ListaDeTelefonesNaoOrdenados minhaLista01 = new ListaDeTelefonesNaoOrdenados();
 		
-		minhaLista.addTelefone(telefone1);
-		minhaLista.addTelefone(telefone2);
+		Scanner myObj = new Scanner(System.in);
+		System.out.println("Informe o DDD 01:");
+		String ddd01 = myObj.nextLine();
+		System.out.println("Informe o Telefone 01:");
+		String noTel01 = myObj.nextLine();
+		System.out.println("Informe o DDD 02:");
+		String ddd02 = myObj.nextLine();
+		System.out.println("Informe o Telefone 01:");
+		String noTel02 = myObj.nextLine();
+		
+		Telefone telefone1 = new Telefone(ddd01,noTel01);
+		Telefone telefone2 = new Telefone(ddd02,noTel02);
+		
+		minhaLista01.addTelefone(telefone1);
+		minhaLista01.addTelefone(telefone2);
 		
 		System.out.println("Telefones antes da remoção");
-		minhaLista.exibirTelefones();
+		minhaLista01.exibirTelefones();
+		
+		objNovoCli01.cadastrar("01", "prof", "Champignon", objDataNascCli01, objEndCli01, minhaLista01);
+		objNovoCli01.getNome();
+		objNovoCli01.getEndereco().getRua();
+		objNovoCli01.getlistaTelsContato();
+		
+		
 		
 		
 	}
